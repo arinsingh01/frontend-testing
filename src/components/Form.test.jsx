@@ -11,7 +11,7 @@ describe('Enhanced Form Component', () => {
     const passwordInput = screen.getByLabelText('Password');
     const interestSelect = screen.getByLabelText('Interest');
     const termsCheckbox = screen.getByLabelText('Accept Terms');
-    const submitBtn = screen.getByText('Submit');
+    const submitBtn = screen.getByText('Complete Registration');
     const resetBtn = screen.getByText('Reset');
 
     // 1. Test filling fields
@@ -50,7 +50,7 @@ describe('Enhanced Form Component', () => {
     fireEvent.change(screen.getByLabelText('Password'), { target: { value: 'pwd', name: 'password' } });
     fireEvent.change(screen.getByLabelText('Interest'), { target: { value: 'design', name: 'interest' } });
     
-    fireEvent.click(screen.getByText('Submit'));
+    fireEvent.click(screen.getByText('Complete Registration'));
     expect(screen.getByRole('alert')).toHaveTextContent('You must accept the terms.');
   });
 });

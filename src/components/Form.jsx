@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Button from './Button';
+import '../Components.css';
 
 const initialState = {
   name: '',
@@ -51,58 +53,66 @@ function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit} noValidate>
-      <label>
-        Name
+    <form className="premium-form" onSubmit={handleSubmit} noValidate>
+      <div className="form-group">
+        <label htmlFor="name">Full Name</label>
         <input
+          id="name"
           name="name"
+          className="premium-input"
           value={formData.name}
           onChange={handleChange}
-          placeholder="Enter name"
+          placeholder="e.g. Alice Johnson"
           aria-label="Name"
         />
-      </label>
+      </div>
 
-      <label>
-        Email
+      <div className="form-group">
+        <label htmlFor="email">Email Address</label>
         <input
+          id="email"
           name="email"
           type="email"
+          className="premium-input"
           value={formData.email}
           onChange={handleChange}
-          placeholder="Enter email"
+          placeholder="alice@company.com"
           aria-label="Email"
         />
-      </label>
+      </div>
 
-      <label>
-        Password
+      <div className="form-group">
+        <label htmlFor="password">Password</label>
         <input
+          id="password"
           name="password"
           type="password"
+          className="premium-input"
           value={formData.password}
           onChange={handleChange}
-          placeholder="Enter password"
+          placeholder="••••••••"
           aria-label="Password"
         />
-      </label>
+      </div>
 
-      <label>
-        Interest
+      <div className="form-group">
+        <label htmlFor="interest">Interest</label>
         <select
+          id="interest"
           name="interest"
+          className="premium-select"
           value={formData.interest}
           onChange={handleChange}
           aria-label="Interest"
         >
-          <option value="">Select an interest</option>
-          <option value="coding">Coding</option>
-          <option value="design">Design</option>
-          <option value="gaming">Gaming</option>
+          <option value="">Choose an option</option>
+          <option value="coding">Software Engineering</option>
+          <option value="design">UI/UX Design</option>
+          <option value="gaming">Game Development</option>
         </select>
-      </label>
+      </div>
 
-      <label>
+      <label className="form-group checkbox-group">
         <input
           name="acceptTerms"
           type="checkbox"
@@ -110,16 +120,16 @@ function Form() {
           onChange={handleChange}
           aria-label="Accept Terms"
         />
-        I accept the terms and conditions
+        <span>I accept the terms and conditions</span>
       </label>
 
-      <div className="button-group">
-        <button type="submit">Submit</button>
-        <button type="button" onClick={handleReset}>Reset</button>
+      <div className="button-group" style={{ display: 'flex', gap: '12px', marginTop: '10px' }}>
+        <Button label="Complete Registration" />
+        <Button label="Reset" variant="secondary" type="button" onClick={handleReset} />
       </div>
 
-      {error && <p role="alert" style={{ color: 'red' }}>{error}</p>}
-      {success && <p role="status" style={{ color: 'green' }}>{success}</p>}
+      {error && <div role="alert" className="status-msg" style={{ background: 'rgba(239, 68, 68, 0.1)', color: 'var(--error)' }}>{error}</div>}
+      {success && <div role="status" className="status-msg" style={{ background: 'rgba(34, 197, 94, 0.1)', color: 'var(--success)' }}>{success}</div>}
     </form>
   );
 }

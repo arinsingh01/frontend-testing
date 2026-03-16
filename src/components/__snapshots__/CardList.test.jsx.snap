@@ -2,36 +2,68 @@
 
 exports[`CardList Snapshot Tests matches snapshot in empty state 1`] = `
 <DocumentFragment>
-  <p>
-    No data available.
+  <p
+    style="text-align: center;"
+  >
+    No records found.
   </p>
 </DocumentFragment>
 `;
 
 exports[`CardList Snapshot Tests matches snapshot in error state 1`] = `
 <DocumentFragment>
-  <p>
-    Error loading data.
-  </p>
+  <div
+    class="status-msg"
+    style="background: rgba(239, 68, 68, 0.1);"
+  >
+    Failed to retrieve data.
+  </div>
 </DocumentFragment>
 `;
 
 exports[`CardList Snapshot Tests matches snapshot in loading state 1`] = `
 <DocumentFragment>
-  <p>
-    Loading...
-  </p>
+  <div
+    class="status-msg"
+  >
+    <div
+      class="spinner"
+      style="margin-bottom: 10px;"
+    >
+      Syncing data...
+    </div>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`CardList Snapshot Tests matches snapshot with data loaded 1`] = `
 <DocumentFragment>
-  <ul>
-    <li>
-      Card One
+  <ul
+    class="premium-list"
+  >
+    <li
+      class="glass premium-card fade-in"
+    >
+      <span
+        class="card-icon"
+      />
+      <span
+        style="font-weight: 500;"
+      >
+        Card One
+      </span>
     </li>
-    <li>
-      Card Two
+    <li
+      class="glass premium-card fade-in"
+    >
+      <span
+        class="card-icon"
+      />
+      <span
+        style="font-weight: 500;"
+      >
+        Card Two
+      </span>
     </li>
   </ul>
 </DocumentFragment>

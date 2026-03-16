@@ -12,36 +12,31 @@ function App() {
   ];
 
   return (
-    <div className="App">
+    <div className="App fade-in">
       <header className="App-header">
-        <h1>Experiment No4: Front-end Testing</h1>
+        <h1 className="title-gradient">Front-end Excellence</h1>
+        <p style={{ color: 'var(--text-secondary)', marginTop: '10px' }}>
+          Experiment No4 – Automated Quality Assurance
+        </p>
       </header>
       
-      <main style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-        <section style={{ marginBottom: '40px' }}>
-          <h2>1. Button Component</h2>
-          <Button label="Click Me" onClick={() => alert('Button Clicked!')} />
-        </section>
-
-        <hr />
-
-        <section style={{ marginBottom: '40px' }}>
-          <h2>2. Enhanced Form Component</h2>
+      <main className="main-content">
+        <section className="glass section-card">
+          <h2>Registration</h2>
           <Form />
         </section>
 
-        <hr />
+        <section style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          <div className="glass section-card">
+            <h2>Data Stream</h2>
+            <CardList status="done" cards={sampleCards} />
+          </div>
 
-        <section style={{ marginBottom: '40px' }}>
-          <h2>3. CardList (Snapshot Testable)</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-            <div>
-              <h3>Data Loaded</h3>
-              <CardList status="done" cards={sampleCards} />
-            </div>
-            <div>
-              <h3>Loading State</h3>
-              <CardList status="loading" />
+          <div className="glass section-card">
+            <h2>Actions</h2>
+            <div style={{ display: 'flex', gap: '10px' }}>
+              <Button label="Sync Now" />
+              <Button label="Logs" variant="secondary" />
             </div>
           </div>
         </section>
