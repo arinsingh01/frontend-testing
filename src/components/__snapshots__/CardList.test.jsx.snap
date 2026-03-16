@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardList Snapshot Tests matches snapshot in empty state 1`] = `
+<DocumentFragment>
+  <p>
+    No data available.
+  </p>
+</DocumentFragment>
+`;
+
+exports[`CardList Snapshot Tests matches snapshot in error state 1`] = `
+<DocumentFragment>
+  <p>
+    Error loading data.
+  </p>
+</DocumentFragment>
+`;
+
+exports[`CardList Snapshot Tests matches snapshot in loading state 1`] = `
+<DocumentFragment>
+  <p>
+    Loading...
+  </p>
+</DocumentFragment>
+`;
+
+exports[`CardList Snapshot Tests matches snapshot with data loaded 1`] = `
+<DocumentFragment>
+  <ul>
+    <li>
+      Card One
+    </li>
+    <li>
+      Card Two
+    </li>
+  </ul>
+</DocumentFragment>
+`;
